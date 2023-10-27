@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713509ce-8965-4428-b258-02ac579d2422" name="Changes" comment="lab2 copy in lab3">
+    <list default="true" id="713509ce-8965-4428-b258-02ac579d2422" name="Changes" comment="lock + condition">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Buffer4Conditions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/IBuffer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Random.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Producent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Producent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/BufferStarve.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +23,14 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,7 +90,7 @@
       <module name="laboratories.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.lab3.*" />
+          <option name="PATTERN" value="org.example.lab3.Buffer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,7 +116,7 @@
       <workItem from="1697994673308" duration="2743000" />
       <workItem from="1697997844382" duration="948000" />
       <workItem from="1698226216376" duration="19000" />
-      <workItem from="1698400970664" duration="2949000" />
+      <workItem from="1698400970664" duration="6397000" />
     </task>
     <task id="LOCAL-00001" summary="lab1-lab2">
       <option name="closed" value="true" />
@@ -136,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698405804058</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lock + condition">
+      <option name="closed" value="true" />
+      <created>1698406785280</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698406785280</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +167,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lab1-lab2" />
     <MESSAGE value="lab2 copy in lab3" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab2 copy in lab3" />
+    <MESSAGE value="lock + condition" />
+    <option name="LAST_COMMIT_MESSAGE" value="lock + condition" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -158,6 +181,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/lab3/Main.java</url>
+          <line>3</line>
+          <properties class="org.example.lab3.Main" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
