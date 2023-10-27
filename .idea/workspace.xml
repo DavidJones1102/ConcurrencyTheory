@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713509ce-8965-4428-b258-02ac579d2422" name="Changes" comment="lab1-lab2" />
+    <list default="true" id="713509ce-8965-4428-b258-02ac579d2422" name="Changes" comment="lab2 copy in lab3" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,10 +21,10 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2X7yypnWhiniRNxGW7Y7i7KLywz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -49,6 +49,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\szymo\studia\3_rok\sem_1\TW\laboratories\src\main\java\org\example" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.lab3" />
     </key>
   </component>
   <component name="RunManager">
@@ -79,7 +82,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1697994672196</updated>
-      <workItem from="1697994673308" duration="2246000" />
+      <workItem from="1697994673308" duration="2743000" />
+      <workItem from="1697997844382" duration="948000" />
+      <workItem from="1698226216376" duration="19000" />
+      <workItem from="1698400970664" duration="2544000" />
     </task>
     <task id="LOCAL-00001" summary="lab1-lab2">
       <option name="closed" value="true" />
@@ -89,7 +95,31 @@
       <option name="project" value="LOCAL" />
       <updated>1697994881539</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="lab1-lab2">
+      <option name="closed" value="true" />
+      <created>1697997584228</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697997584228</updated>
+    </task>
+    <task id="LOCAL-00003" summary="lab1-lab2">
+      <option name="closed" value="true" />
+      <created>1697997623148</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697997623148</updated>
+    </task>
+    <task id="LOCAL-00004" summary="lab2 copy in lab3">
+      <option name="closed" value="true" />
+      <created>1698405804058</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698405804058</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,7 +127,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lab1-lab2" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab1-lab2" />
+    <MESSAGE value="lab2 copy in lab3" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab2 copy in lab3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

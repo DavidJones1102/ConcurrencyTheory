@@ -1,4 +1,4 @@
-package org.example.lab2;
+package org.example.lab3;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +15,3 @@ public class Main {
         }
     }
 }
-
-// cx2 px1
-// c c p p c c
