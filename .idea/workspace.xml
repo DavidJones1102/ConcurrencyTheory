@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713509ce-8965-4428-b258-02ac579d2422" name="Changes" comment="lab2 copy in lab3" />
+    <list default="true" id="713509ce-8965-4428-b258-02ac579d2422" name="Changes" comment="lab2 copy in lab3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Status.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +57,7 @@
       <recent name="org.example.lab3" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.org.example.lab3.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.lab2.Main" />
       <module name="laboratories.main" />
@@ -68,8 +71,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="org.example.lab3.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.lab3.Main" />
+      <module name="laboratories.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.lab3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.org.example.lab3.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -85,7 +102,7 @@
       <workItem from="1697994673308" duration="2743000" />
       <workItem from="1697997844382" duration="948000" />
       <workItem from="1698226216376" duration="19000" />
-      <workItem from="1698400970664" duration="2544000" />
+      <workItem from="1698400970664" duration="2949000" />
     </task>
     <task id="LOCAL-00001" summary="lab1-lab2">
       <option name="closed" value="true" />
