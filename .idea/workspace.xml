@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="713509ce-8965-4428-b258-02ac579d2422" name="Changes" comment="lock + condition">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Buffer4Conditions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/IBuffer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Random.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Consumer.java" afterDir="false" />
+    <list default="true" id="713509ce-8965-4428-b258-02ac579d2422" name="Changes" comment="IBuffer interface">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Producent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Producent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/BufferStarve.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,21 +41,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/szymo/studia/3_rok/sem_1/TW/laboratories/src/main/java/org/example",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/szymo/studia/3_rok/sem_1/TW/laboratories&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\szymo\studia\3_rok\sem_1\TW\laboratories\src\main\java\org\example" />
@@ -116,7 +109,13 @@
       <workItem from="1697994673308" duration="2743000" />
       <workItem from="1697997844382" duration="948000" />
       <workItem from="1698226216376" duration="19000" />
-      <workItem from="1698400970664" duration="6397000" />
+      <workItem from="1698400970664" duration="6804000" />
+      <workItem from="1698410745215" duration="23000" />
+      <workItem from="1698431875974" duration="6000" />
+      <workItem from="1698432095562" duration="467000" />
+      <workItem from="1698432625749" duration="7000" />
+      <workItem from="1698432929846" duration="416000" />
+      <workItem from="1698587247482" duration="3392000" />
     </task>
     <task id="LOCAL-00001" summary="lab1-lab2">
       <option name="closed" value="true" />
@@ -158,7 +157,31 @@
       <option name="project" value="LOCAL" />
       <updated>1698406785280</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="IBuffer interface">
+      <option name="closed" value="true" />
+      <created>1698409872090</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698409872090</updated>
+    </task>
+    <task id="LOCAL-00007" summary="IBuffer interface">
+      <option name="closed" value="true" />
+      <created>1698409928516</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698409928516</updated>
+    </task>
+    <task id="LOCAL-00008" summary="IBuffer interface">
+      <option name="closed" value="true" />
+      <created>1698409972269</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698409972269</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +191,8 @@
     <MESSAGE value="lab1-lab2" />
     <MESSAGE value="lab2 copy in lab3" />
     <MESSAGE value="lock + condition" />
-    <option name="LAST_COMMIT_MESSAGE" value="lock + condition" />
+    <MESSAGE value="IBuffer interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="IBuffer interface" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -184,7 +208,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/lab3/Main.java</url>
-          <line>3</line>
+          <line>7</line>
           <properties class="org.example.lab3.Main" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

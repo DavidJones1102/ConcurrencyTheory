@@ -14,7 +14,7 @@ public class BufferStarve implements IBuffer {
     public BufferStarve(int limit){
         this.limit = limit;
     }
-    public void produce(int portion) {
+    public void produce(int portion, int id) {
         lock.lock();
         int tries = 0;
         while (counter + portion >= limit){
@@ -24,14 +24,14 @@ public class BufferStarve implements IBuffer {
                 throw new RuntimeException(e);
             }
             tries++;
-            System.out.println("I am waiting "+tries+" time, wanted to produce "+portion);
+            System.out.println(id +" I am waiting "+tries+" time, wanted to produce "+portion);
         }
         counter+=portion;
-        System.out.println("Produce "+counter);
+        System.out.println(id + " Produce "+portion);
         notEmpty.signal();
         lock.unlock();
     }
-    public void consume(int portion) {
+    public void consume(int portion, int id) {
         lock.lock();
         int tries = 0;
         while (counter-portion <= 0){
@@ -41,10 +41,10 @@ public class BufferStarve implements IBuffer {
                 throw new RuntimeException(e);
             }
             tries++;
-            System.out.println("I am waiting "+tries+" time, wanted to consume "+portion);
+            System.out.println(id+" I am waiting "+tries+" time, wanted to consume "+portion);
         }
         counter-=portion;
-        System.out.println("Consume "+counter);
+        System.out.println(id + " Consume "+portion);
         notFull.signal();
         lock.unlock();
     }
