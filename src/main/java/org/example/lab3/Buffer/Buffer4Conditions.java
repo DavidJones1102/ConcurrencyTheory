@@ -14,24 +14,16 @@ public class Buffer4Conditions implements IBuffer{
     public Buffer4Conditions(int limit){
         this.limit = limit;
     }
-    public void produce(int portion, int id) {
+    public void produce(int portion, int id) throws InterruptedException{
         lock.lock();
         int tries = 0;
         while (lock.hasWaiters(firstProducer)) {
-            try{
-                restProducers.await();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            restProducers.await();
             tries++;
             System.out.println(id + " I am waiting "+tries+" time, wanted to produce "+portion);
         }
         while (counter + portion >= limit){
-            try {
-                firstProducer.await();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            firstProducer.await();
             tries++;
             System.out.println(id + " I am waiting "+tries+" time, wanted to produce "+portion);
         }
@@ -42,24 +34,16 @@ public class Buffer4Conditions implements IBuffer{
         firstConsumer.signal();
         lock.unlock();
     }
-    public void consume(int portion, int id) {
+    public void consume(int portion, int id) throws InterruptedException{
         lock.lock();
         int tries = 0;
         while (lock.hasWaiters(firstConsumer)) {
-            try{
-                restConsumers.await();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            restConsumers.await();
             tries++;
             System.out.println(id + "I am waiting "+tries+" time, wanted to consume "+portion);
         }
         while (counter-portion <= 0){
-            try {
-                firstConsumer.await();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            firstConsumer.await();
             tries++;
             System.out.println(id + " I am waiting "+tries+" time, wanted to consume "+portion);
         }

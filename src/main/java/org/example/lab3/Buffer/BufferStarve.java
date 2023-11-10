@@ -14,15 +14,11 @@ public class BufferStarve implements IBuffer {
     public BufferStarve(int limit){
         this.limit = limit;
     }
-    public void produce(int portion, int id) {
+    public void produce(int portion, int id) throws InterruptedException{
         lock.lock();
         int tries = 0;
         while (counter + portion >= limit){
-            try {
-                notFull.await();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            notFull.await();
             tries++;
             System.out.println(id +" I am waiting "+tries+" time, wanted to produce "+portion);
         }
@@ -31,15 +27,11 @@ public class BufferStarve implements IBuffer {
         notEmpty.signal();
         lock.unlock();
     }
-    public void consume(int portion, int id) {
+    public void consume(int portion, int id) throws InterruptedException{
         lock.lock();
         int tries = 0;
         while (counter-portion <= 0){
-            try {
-                notEmpty.await();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            notEmpty.await();
             tries++;
             System.out.println(id+" I am waiting "+tries+" time, wanted to consume "+portion);
         }

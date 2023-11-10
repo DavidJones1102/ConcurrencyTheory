@@ -23,7 +23,12 @@ public class Producer extends Thread{
             }else{
                 portion = constPortion;
             }
-            buffer.produce(portion, id);
+
+            try {
+                buffer.produce(portion, id);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

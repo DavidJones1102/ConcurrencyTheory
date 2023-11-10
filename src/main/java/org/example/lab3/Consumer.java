@@ -25,7 +25,11 @@ public class Consumer extends Thread {
             }else {
                 portion = constPortion;
             }
-            buffer.consume(portion, id);
+            try {
+                buffer.consume(portion, id);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
