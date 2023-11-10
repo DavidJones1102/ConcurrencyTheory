@@ -7,7 +7,7 @@ import org.example.lab3.Buffer.IBuffer;
 
 public class Main {
     public static void main(String[] args) {
-        IBuffer status = new Buffer4Conditions2Bool(10);
+        IBuffer status = new Buffer4Conditions(10);
 
 //        for (int i=0;i<5;i++){
 //         Producer producer = new Producer(status, i);

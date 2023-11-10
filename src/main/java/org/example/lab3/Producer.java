@@ -6,6 +6,7 @@ public class Producer extends Thread{
     IBuffer buffer;
     final int id;
     private final int constPortion;
+    private int timesProduced = 0;
     public Producer(IBuffer c, int id){
         this(c, id, 0);
     }
@@ -29,6 +30,8 @@ public class Producer extends Thread{
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            timesProduced++;
+            System.out.println("Producer id: "+id+", portion: "+portion+", times produced: "+timesProduced);
         }
     }
 }

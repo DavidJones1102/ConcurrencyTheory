@@ -6,6 +6,7 @@ public class Consumer extends Thread {
     IBuffer buffer;
     final int id;
     private final int constPortion;
+    private int timesConsumed = 0;
     public Consumer(IBuffer c, int id){
         this(c,id,0);
     }
@@ -30,6 +31,8 @@ public class Consumer extends Thread {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+            timesConsumed++;
+            System.out.println("Consumer id: "+id+", portion: "+portion+", times consumed: "+timesConsumed);
         }
     }
 }

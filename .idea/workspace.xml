@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="713509ce-8965-4428-b258-02ac579d2422" name="Changes" comment="IBuffer interface">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Buffer/Buffer4Conditions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Buffer/Buffer4Conditions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +16,18 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,6 +73,7 @@
       <recent name="D:\szymo\studia\3_rok\sem_1\TW\laboratories\src\main\java\org\example" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.lab3.Buffer" />
       <recent name="org.example.lab3" />
     </key>
   </component>
@@ -208,7 +221,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/lab3/Main.java</url>
-          <line>7</line>
+          <line>8</line>
           <properties class="org.example.lab3.Main" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
