@@ -1,35 +1,41 @@
 package org.example.lab3.Buffer;
 
-
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class BufferStarve implements IBuffer {
-    ReentrantLock lock = new ReentrantLock();
-    Condition notEmpty = lock.newCondition();
-    Condition notFull = lock.newCondition();
+public class Buffer3Lock implements IBuffer {
+    ReentrantLock consumerLock = new ReentrantLock();
+    ReentrantLock producerLock = new ReentrantLock();
+    ReentrantLock commonLock = new ReentrantLock();
+    Condition condition = commonLock.newCondition();
+
     private int counter = 0;
     final int limit;
-    public BufferStarve(int limit){
+    public Buffer3Lock(int limit){
         this.limit = limit;
     }
     public void produce(int portion, int id) throws InterruptedException{
-        lock.lock();
+        producerLock.lock();
+        commonLock.lock();
         while (counter + portion >= limit){
-            notFull.await();
+            condition.await();
         }
         counter+=portion;
-        notEmpty.signal();
-        lock.unlock();
+        condition.signal();
+
+        commonLock.unlock();
+        producerLock.unlock();
     }
     public void consume(int portion, int id) throws InterruptedException{
-        lock.lock();
+        consumerLock.lock();
+        commonLock.lock();
         while (counter-portion <= 0){
-            notEmpty.await();
+            condition.await();
         }
         counter-=portion;
-        notFull.signal();
-        lock.unlock();
+        condition.signal();
+        commonLock.unlock();
+        consumerLock.unlock();
     }
 
     public int getLimit() {

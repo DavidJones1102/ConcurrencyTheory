@@ -17,10 +17,10 @@ public class Buffer4Conditions implements IBuffer{
     public void produce(int portion, int id) throws InterruptedException{
         lock.lock();
         while (lock.hasWaiters(firstProducer)) {
-            restProducers.await();
+            restProducers.await();  // p(5), p(6), p(3)
         }
         while (counter + portion >= limit){
-            firstProducer.await();
+            firstProducer.await();           // p(2)
         }
 
         counter+=portion;
@@ -31,13 +31,15 @@ public class Buffer4Conditions implements IBuffer{
     public void consume(int portion, int id) throws InterruptedException{
         lock.lock();
         while (lock.hasWaiters(firstConsumer)) {
-            restConsumers.await();
+            restConsumers.await(); // c(7)
         }
         while (counter-portion <= 0){
-            firstConsumer.await();
+            // print
+            firstConsumer.await();  // c(10)
         }
         counter-=portion;
 
+        // done
         restConsumers.signal();
         firstProducer.signal();
         lock.unlock();
@@ -47,6 +49,22 @@ public class Buffer4Conditions implements IBuffer{
         return limit;
     }
 }
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Producer id: 2, portion: 4, times produced: 53109
 // ...
 // Consumer id: 2, portion: 4, times consumed: 52849

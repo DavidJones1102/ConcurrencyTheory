@@ -7,7 +7,8 @@
     <list default="true" id="713509ce-8965-4428-b258-02ac579d2422" name="Changes" comment="IBuffer interface">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Buffer/Buffer4Conditions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Buffer/Buffer4Conditions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Buffer/Buffer4Conditions2Bool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Buffer/Buffer4Conditions2Bool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Buffer/BufferStarve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Buffer/BufferStarve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/lab3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/lab3/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +134,7 @@
       <workItem from="1698587247482" duration="3392000" />
       <workItem from="1699644032186" duration="884000" />
       <workItem from="1700044381737" duration="76000" />
-      <workItem from="1700151479716" duration="8231000" />
+      <workItem from="1700151479716" duration="13876000" />
     </task>
     <task id="LOCAL-00001" summary="lab1-lab2">
       <option name="closed" value="true" />
@@ -226,7 +227,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/lab3/Main.java</url>
-          <line>8</line>
+          <line>5</line>
           <properties class="org.example.lab3.Main" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
