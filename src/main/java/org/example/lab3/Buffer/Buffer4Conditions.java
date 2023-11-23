@@ -1,5 +1,7 @@
 package org.example.lab3.Buffer;
 
+import org.example.lab3.StopWatch;
+
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -9,39 +11,61 @@ public class Buffer4Conditions implements IBuffer{
     Condition restConsumers = lock.newCondition();
     Condition firstProducer = lock.newCondition();
     Condition restProducers = lock.newCondition();
+    StopWatch watch = new StopWatch();
     private int counter = 0;
+    private int operations;
     final int limit;
     public Buffer4Conditions(int limit){
         this.limit = limit;
     }
     public void produce(int portion, int id) throws InterruptedException{
         lock.lock();
+        watch.start();
         while (lock.hasWaiters(firstProducer)) {
+            watch.stop();
             restProducers.await();  // p(5), p(6), p(3)
+            watch.start();
         }
         while (counter + portion >= limit){
-            firstProducer.await();           // p(2)
+            watch.stop();
+            firstProducer.await();
+            watch.start();// p(2)
         }
 
         counter+=portion;
         restProducers.signal();
         firstConsumer.signal();
+        watch.stop();
+        if(operations>=100000){
+            System.out.println(watch.getTime());
+            System.exit(0);
+        }
         lock.unlock();
     }
     public void consume(int portion, int id) throws InterruptedException{
         lock.lock();
+        watch.start();
         while (lock.hasWaiters(firstConsumer)) {
+            watch.stop();
             restConsumers.await(); // c(7)
+            watch.start();
         }
         while (counter-portion <= 0){
+            watch.stop();
             // print
             firstConsumer.await();  // c(10)
+            watch.start();
         }
         counter-=portion;
 
         // done
         restConsumers.signal();
         firstProducer.signal();
+        watch.stop();
+        if(operations>=100000){
+            System.out.println(watch.getTime());
+            System.exit(0);
+        }
         lock.unlock();
     }
 
@@ -50,20 +74,6 @@ public class Buffer4Conditions implements IBuffer{
     }
 }
 //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Producer id: 2, portion: 4, times produced: 53109
 // ...
@@ -101,3 +111,13 @@ public class Buffer4Conditions implements IBuffer{
 // ale w między czasie wchodzi nowy konsument i wiesza się na firstCons bo ten co był wcześniej czeka na locku
 
 // mamy 2 konsumentów na first
+
+//1. doprowadź do sytuacji: "więcej niż jeden wątek na firstProd" (bufor prawie pełny)
+//
+//2. wprowadź wątki konsumentów, by opróżniły bufor (jak najmniejszą ich liczbą, by na firstProd został jakiś wątek nadmiarowo tam uwięzione wątki) (bufor pusty)
+//
+//3. dalej wprowadzaj watki konsumentów - tym razem przy pustym buforze zaczna sie wieszac na firstCons i na othersCons
+//
+//4. doprowadz do zawieszenia sie wiecej niz jednego konsunenta na firstCons
+//
+//5. (stan po poprzednich krokach jest taki: bufor pusty, konsumenci wiszą, na firstProd został jeden z producentów) wpuszczamy producenta..... który warunek sprawdza?....
