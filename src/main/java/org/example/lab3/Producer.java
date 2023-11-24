@@ -2,11 +2,13 @@ package org.example.lab3;
 
 import org.example.lab3.Buffer.IBuffer;
 
+
 public class Producer extends Thread{
     IBuffer buffer;
     final int id;
     private final int constPortion;
     private int timesProduced = 0;
+    private java.util.Random random ;
     public Producer(IBuffer c, int id){
         this(c, id, 0);
     }
@@ -14,13 +16,14 @@ public class Producer extends Thread{
         this.constPortion = constPortion;
         buffer = c;
         this.id = id;
+        this.random = new java.util.Random(id);
     }
     @Override
     public void run() {
         int portion;
         while (true){
             if (constPortion == 0){
-                portion = Random.getRandomNumber(0,buffer.getLimit()/2);
+                portion = random.nextInt(0,buffer.getLimit()/2);
             }else{
                 portion = constPortion;
             }
@@ -31,7 +34,7 @@ public class Producer extends Thread{
                 throw new RuntimeException(e);
             }
             timesProduced++;
-            System.out.println("Producer id: "+id+", portion: "+portion+", times produced: "+timesProduced);
+//            System.out.println("Producer id: "+id+", portion: "+portion+", times produced: "+timesProduced);
         }
     }
 }

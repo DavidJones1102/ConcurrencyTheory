@@ -4,25 +4,25 @@ import org.example.lab3.Buffer.*;
 
 public class Main {
     public static void main(String[] args) {
-        IBuffer status = new Buffer3Lock(10);
+        IBuffer status = new Buffer3Lock(10, 10_000_000);
 
-//        for (int i=0;i<5;i++){
-//         Producer producer = new Producer(status, i);
-//         producer.start();
-//        }
-//
-//        for (int i=0;i<5;i++){
-//         Consumer consumer = new Consumer(status, i);
-//         consumer.start();
-//        }
-         Producer p1 = new Producer(status, 1, 1);
-         p1.start();
-         Producer p3 = new Producer(status, 2, 4);
-         p3.start();
-         Consumer c1 = new Consumer(status, 1, 1);
-         c1.start();
-         Consumer c2 = new Consumer(status, 2, 4);
-         c2.start();
+        for (int i=0;i<5;i++){
+         Producer producer = new Producer(status, i);
+         producer.start();
+        }
+
+        for (int i=0;i<5;i++){
+         Consumer consumer = new Consumer(status, i);
+         consumer.start();
+        }
+//         Producer p1 = new Producer(status, 1, 1);
+//         p1.start();
+//         Producer p3 = new Producer(status, 2, 4);
+//         p3.start();
+//         Consumer c1 = new Consumer(status, 1, 1);
+//         c1.start();
+//         Consumer c2 = new Consumer(status, 2, 4);
+//         c2.start();
     }
 }
 

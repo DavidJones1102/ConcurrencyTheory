@@ -15,8 +15,10 @@ public class Buffer3Lock implements IBuffer {
     private int counter = 0;
     private int operations = 0;
     final int limit;
-    public Buffer3Lock(int limit){
+    private int stop;
+    public Buffer3Lock(int limit, int stop){
         this.limit = limit;
+        this.stop = stop;
     }
     public void produce(int portion, int id) throws InterruptedException{
         producerLock.lock();
@@ -31,7 +33,7 @@ public class Buffer3Lock implements IBuffer {
         condition.signal();
         operations++;
         watch.stop();
-        if(operations>=100000){
+        if(operations>=stop){
             System.out.println(watch.getTime());
             System.exit(0);
         }
@@ -51,7 +53,7 @@ public class Buffer3Lock implements IBuffer {
         condition.signal();
         operations++;
         watch.stop();
-        if(operations>=100000){
+        if(operations>=stop){
             System.out.println(watch.getTime());
             System.exit(0);
         }

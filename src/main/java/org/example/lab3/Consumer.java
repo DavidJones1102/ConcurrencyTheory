@@ -7,6 +7,7 @@ public class Consumer extends Thread {
     final int id;
     private final int constPortion;
     private int timesConsumed = 0;
+    private java.util.Random random;
     public Consumer(IBuffer c, int id){
         this(c,id,0);
     }
@@ -15,6 +16,7 @@ public class Consumer extends Thread {
         buffer = c;
         this.id = id;
         this.constPortion = constPortion;
+        this.random = new java.util.Random(id);
     }
 
     @Override
@@ -22,7 +24,7 @@ public class Consumer extends Thread {
         int portion;
         while (true){
             if (constPortion == 0){
-                portion = Random.getRandomNumber(0, buffer.getLimit()/2);
+                portion = random.nextInt(0, buffer.getLimit()/2);
             }else {
                 portion = constPortion;
             }
@@ -32,7 +34,7 @@ public class Consumer extends Thread {
                 throw new RuntimeException(e);
             }
             timesConsumed++;
-            System.out.println("Consumer id: "+id+", portion: "+portion+", times consumed: "+timesConsumed);
+//            System.out.println("Consumer id: "+id+", portion: "+portion+", times consumed: "+timesConsumed);
         }
     }
 }

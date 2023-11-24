@@ -15,8 +15,10 @@ public class Buffer4Conditions implements IBuffer{
     private int counter = 0;
     private int operations;
     final int limit;
-    public Buffer4Conditions(int limit){
+    private int stop;
+    public Buffer4Conditions(int limit, int stop){
         this.limit = limit;
+        this.stop = stop;
     }
     public void produce(int portion, int id) throws InterruptedException{
         lock.lock();
@@ -35,8 +37,9 @@ public class Buffer4Conditions implements IBuffer{
         counter+=portion;
         restProducers.signal();
         firstConsumer.signal();
+        operations++;
         watch.stop();
-        if(operations>=100000){
+        if(operations>=stop){
             System.out.println(watch.getTime());
             System.exit(0);
         }
@@ -61,8 +64,9 @@ public class Buffer4Conditions implements IBuffer{
         // done
         restConsumers.signal();
         firstProducer.signal();
+        operations++;
         watch.stop();
-        if(operations>=100000){
+        if(operations>=stop){
             System.out.println(watch.getTime());
             System.exit(0);
         }
