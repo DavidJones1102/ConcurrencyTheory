@@ -21,7 +21,7 @@ public class Producer extends Thread{
     @Override
     public void run() {
         int portion;
-        while (true){
+        while (!Thread.currentThread().isInterrupted()){
             if (constPortion == 0){
                 portion = random.nextInt(0,buffer.getLimit()/2);
             }else{
@@ -31,7 +31,7 @@ public class Producer extends Thread{
             try {
                 buffer.produce(portion, id);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                Thread.currentThread().interrupt();
             }
             timesProduced++;
 //            System.out.println("Producer id: "+id+", portion: "+portion+", times produced: "+timesProduced);

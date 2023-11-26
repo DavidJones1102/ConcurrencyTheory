@@ -2,19 +2,52 @@ package org.example.lab3;
 
 import org.example.lab3.Buffer.*;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.LinkedList;
+
 public class Main {
-    public static void main(String[] args) {
-        IBuffer status = new Buffer3Lock(10, 10_000_000);
+    public static void main(String[] args) throws FileNotFoundException {
 
-        for (int i=0;i<5;i++){
-         Producer producer = new Producer(status, i);
-         producer.start();
-        }
+        LinkedList<Producer> producers = new LinkedList<>();
+        LinkedList<Consumer> consumers = new LinkedList<>();
+        StringBuilder results = new StringBuilder();
+        int[] consumerLifeTimeArray = {100, 500, 1000, 1500, 2000, 5000, 10_000, 100_000, 1_000_000};
 
-        for (int i=0;i<5;i++){
-         Consumer consumer = new Consumer(status, i);
-         consumer.start();
+        for (int consumerLifeTime: consumerLifeTimeArray){
+            IBuffer status = new Buffer4Conditions2Bool(10);
+
+            for (int i=0;i<5;i++){
+                producers.add( new Producer(status, i));
+                consumers.add( new Consumer(status, i, consumerLifeTime));
+            }
+            producers.forEach(Thread::start);
+
+            long startTime = System.currentTimeMillis();
+            consumers.forEach(Thread::start);
+            consumers.forEach(c -> {
+                try {
+                    c.join();
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();;
+                }
+            });
+            long time = System.currentTimeMillis()-startTime;
+
+            // clear
+            producers.forEach(Thread::interrupt);
+            producers.clear();
+            consumers.clear();
+            results.append(consumerLifeTime).append(",").append(time).append("\n");
+            // save
+
         }
+        PrintWriter save = new PrintWriter("results_4_conditions.txt");
+        save.println(results);
+        save.close();
+        System.exit(0);
+
 //         Producer p1 = new Producer(status, 1, 1);
 //         p1.start();
 //         Producer p3 = new Producer(status, 2, 4);
